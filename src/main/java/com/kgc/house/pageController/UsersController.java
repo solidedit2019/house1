@@ -33,7 +33,9 @@ public class UsersController {
 
     }
     @RequestMapping("loginAction")
-    public String loginAction(String name, String password, HttpSession session, Model model){
+    public String loginAction(String veryCode,String name, String password, HttpSession session, Model model){
+        String code = (String) session.getAttribute("code");
+        if(veryCode.equals(code)){
 
         if(name!=null&&password!=null&&!name.equals("")&&!password.equals("")){
             Users users = usersService.login(name, password);
@@ -45,5 +47,9 @@ public class UsersController {
             return "login";
         }
 
-    }
+    }else {
+        model.addAttribute("info","验证码失效或过期");
+        return "login";
+        }
+}
 }

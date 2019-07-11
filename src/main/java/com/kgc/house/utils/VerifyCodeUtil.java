@@ -5,7 +5,7 @@ package com.kgc.house.utils;
  * @date 2011-3-22
  * @version V1.2  
  */
-public class test {
+public class VerifyCodeUtil {
 	
 	//用户名
 	private static String Uid = "k9502";
@@ -34,7 +34,7 @@ public class test {
 
 	}
 
-	public static void main(String[] args) {
-		verifyCode("13207270301","验证码：1234,请保管好");
-	}
+//	public static void main(String[] args) {
+//		verifyCode("13207270301","验证码：1234,请保管好");
+//	}
 }

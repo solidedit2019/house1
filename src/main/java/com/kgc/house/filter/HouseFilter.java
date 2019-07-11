@@ -17,7 +17,8 @@ public class HouseFilter implements Filter {
         String url = request.getRequestURI();
         String path = url.substring(url.lastIndexOf("/") + 1);
         if (path.equals("login.jsp") || path.equals("regs.jsp") ||
-                path.equals("getUserName") || path.equals("register") || path.equals("loginAction")) {
+                path.equals("getUserName") || path.equals("register") ||
+                path.equals("loginAction")||path.equals("getcode")) {
             chain.doFilter(req, resp);
         } else {
             HttpSession session = request.getSession();
